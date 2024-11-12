@@ -2,7 +2,7 @@
 // Depto de Sistemas y Computacion
 // Ing. Sistemas computacionales
 // Autor: Ibarra Acedo Dominick 
-// Repositorio: 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
 
 .global _start
 
