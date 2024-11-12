@@ -7,7 +7,7 @@
 //Matriz transpuesta
 //Matricez 2x2
 
-public class MatrixOperations
+// public class MatrixOperations
 // {
 //     public static T[,] Transponer<T>(T[,] matriz)
 //     {
