@@ -1,3 +1,65 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+// public static class MCDCalculator
+// {
+//     // Método iterativo usando el algoritmo de Euclides
+//     public static int CalcularMCD(int a, int b)
+//     {
+//         // Convertimos a números positivos
+//         a = Math.Abs(a);
+//         b = Math.Abs(b);
+        
+//         // Caso especial: si uno de los números es 0
+//         if (a == 0) return b;
+//         if (b == 0) return a;
+        
+//         // Algoritmo de Euclides
+//         while (b != 0)
+//         {
+//             int temp = b;
+//             b = a % b;
+//             a = temp;
+//         }
+        
+//         return a;
+//     }
+    
+//     // Método recursivo
+//     public static int CalcularMCDRecursivo(int a, int b)
+//     {
+//         a = Math.Abs(a);
+//         b = Math.Abs(b);
+        
+//         if (b == 0)
+//             return a;
+            
+//         return CalcularMCDRecursivo(b, a % b);
+//     }
+    
+//     // Método para calcular el MCD de múltiples números
+//     public static int CalcularMCDMultiple(params int[] numeros)
+//     {
+//         if (numeros == null || numeros.Length == 0)
+//             throw new ArgumentException("Debe proporcionar al menos un número");
+            
+//         if (numeros.Length == 1)
+//             return Math.Abs(numeros[0]);
+            
+//         int resultado = CalcularMCD(numeros[0], numeros[1]);
+        
+//         for (int i = 2; i < numeros.Length; i++)
+//         {
+//             resultado = CalcularMCD(resultado, numeros[i]);
+//         }
+        
+//         return resultado;
+//     }
+// }
+
+
 // Programa para calcular el MCD usando el algoritmo de Euclides
 // Registros usados:
 // x0: primer número
