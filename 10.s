@@ -1,3 +1,9 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
 // Programa en ensamblador ARM de 64 bits para invertir una cadena fija
 // Guardar este archivo como invertir.s y compilar con:
 // $ as -o invertir.o invertir.s
