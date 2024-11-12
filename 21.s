@@ -7,6 +7,44 @@
 //Matriz transpuesta
 //Matricez 2x2
 
+public class MatrixOperations
+// {
+//     public static T[,] Transponer<T>(T[,] matriz)
+//     {
+//         int filas = matriz.GetLength(0);
+//         int columnas = matriz.GetLength(1);
+        
+//         T[,] transpuesta = new T[columnas, filas];
+        
+//         // Utilizamos parallel for para mejorar el rendimiento en matrices grandes
+//         Parallel.For(0, filas, i =>
+//         {
+//             for (int j = 0; j < columnas; j++)
+//             {
+//                 transpuesta[j, i] = matriz[i, j];
+//             }
+//         });
+        
+//         return transpuesta;
+//     }
+    
+//     // Método de ayuda para imprimir la matriz
+//     public static void ImprimirMatriz<T>(T[,] matriz)
+//     {
+//         int filas = matriz.GetLength(0);
+//         int columnas = matriz.GetLength(1);
+        
+//         for (int i = 0; i < filas; i++)
+//         {
+//             for (int j = 0; j < columnas; j++)
+//             {
+//                 Console.Write(matriz[i, j] + "\t");
+//             }
+//             Console.WriteLine();
+//         }
+//     }
+// }
+
 .section .data
 matrix:     .word 1, 2, 3, 4    // Matriz 2x2: A = [1, 2; 3, 4]
 result:     .skip 16            // Espacio para la matriz transpuesta (2x2)
