@@ -1,3 +1,26 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/* 
+using System;
+
+class LectorTeclado
+{
+    static void Main()
+    {
+        // Leer una línea completa de texto
+        Console.Write("Ingresa tu nombre: ");
+        string nombre = Console.ReadLine();
+
+        Console.WriteLine($"Hola, {nombre}!");
+    }
+}
+
+*/
+
 // Lector de entrada desde teclado
 .global _start
 .section .text
