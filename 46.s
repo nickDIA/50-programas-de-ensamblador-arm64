@@ -1,3 +1,69 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/* 
+using System;
+
+class PrefijoComun
+{
+    static void Main()
+    {
+        // Solicitar al usuario que ingrese las cadenas
+        Console.WriteLine("Ingresa el número de cadenas:");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        string[] cadenas = new string[n];
+        Console.WriteLine("Ingresa las cadenas:");
+
+        // Leer las cadenas
+        for (int i = 0; i < n; i++)
+        {
+            cadenas[i] = Console.ReadLine();
+        }
+
+        // Encontrar el prefijo común más largo
+        string prefijoComun = EncontrarPrefijoComun(cadenas);
+
+        // Imprimir el resultado
+        Console.WriteLine("El prefijo común más largo es: " + prefijoComun);
+    }
+
+    static string EncontrarPrefijoComun(string[] cadenas)
+    {
+        if (cadenas.Length == 0) return "";
+
+        // Empezar con el primer string como prefijo común
+        string prefijo = cadenas[0];
+
+        // Comparar el prefijo con cada cadena en el arreglo
+        foreach (string cadena in cadenas)
+        {
+            int longitud = Math.Min(prefijo.Length, cadena.Length);
+            int i = 0;
+
+            // Encontrar la parte común
+            while (i < longitud && prefijo[i] == cadena[i])
+            {
+                i++;
+            }
+
+            // Reducir el prefijo al común encontrado
+            prefijo = prefijo.Substring(0, i);
+
+            // Si en algún momento el prefijo se convierte en vacío, terminamos
+            if (prefijo == "")
+                return "";
+        }
+
+        return prefijo;
+    }
+}
+
+*/
+
 // Encontrar el prefijo común más largo en cadenas
 .global _start
 .section .text
