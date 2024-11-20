@@ -1,3 +1,138 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/*
+  using System;
+
+class Pila
+{
+    private int[] pila;
+    private int tope;
+    private int capacidad;
+
+    public Pila(int capacidad)
+    {
+        this.capacidad = capacidad;
+        this.pila = new int[capacidad];
+        this.tope = -1; // La pila está vacía
+    }
+
+    // Verifica si la pila está vacía
+    public bool EstaVacia()
+    {
+        return tope == -1;
+    }
+
+    // Verifica si la pila está llena
+    public bool EstaLlena()
+    {
+        return tope == capacidad - 1;
+    }
+
+    // Apilar un elemento
+    public void Apilar(int valor)
+    {
+        if (EstaLlena())
+        {
+            Console.WriteLine("La pila está llena. No se puede apilar.");
+        }
+        else
+        {
+            tope++;
+            pila[tope] = valor;
+            Console.WriteLine($"Elemento {valor} apilado.");
+        }
+    }
+
+    // Desapilar un elemento
+    public int Desapilar()
+    {
+        if (EstaVacia())
+        {
+            Console.WriteLine("La pila está vacía. No se puede desapilar.");
+            return -1;
+        }
+        else
+        {
+            int valor = pila[tope];
+            tope--;
+            Console.WriteLine($"Elemento {valor} desapilado.");
+            return valor;
+        }
+    }
+
+    // Ver el elemento en el tope de la pila
+    public int Tope()
+    {
+        if (EstaVacia())
+        {
+            Console.WriteLine("La pila está vacía.");
+            return -1;
+        }
+        else
+        {
+            return pila[tope];
+        }
+    }
+
+    // Mostrar todos los elementos de la pila
+    public void Mostrar()
+    {
+        if (EstaVacia())
+        {
+            Console.WriteLine("La pila está vacía.");
+        }
+        else
+        {
+            Console.Write("Elementos en la pila: ");
+            for (int i = 0; i <= tope; i++)
+            {
+                Console.Write(pila[i] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Crear una pila con capacidad de 5 elementos
+        Pila pila = new Pila(5);
+
+        // Apilar elementos
+        pila.Apilar(10);
+        pila.Apilar(20);
+        pila.Apilar(30);
+
+        // Mostrar la pila
+        pila.Mostrar();
+
+        // Desapilar un elemento
+        pila.Desapilar();
+
+        // Mostrar la pila después de desapilar
+        pila.Mostrar();
+
+        // Ver el elemento en el tope de la pila
+        Console.WriteLine("El elemento en el tope de la pila es: " + pila.Tope());
+
+        // Apilar más elementos
+        pila.Apilar(40);
+        pila.Apilar(50);
+        pila.Apilar(60); // Esto debería dar un error porque la pila está llena
+
+        // Mostrar la pila
+        pila.Mostrar();
+    }
+}
+
+*/
+
 // Programa que implementa una pila usando un arreglo
 // Registros usados:
 // x0: dirección base de la pila
