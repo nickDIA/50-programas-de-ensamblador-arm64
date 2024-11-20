@@ -1,3 +1,33 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+// Establecer, borrar y alternar bits
+
+/*
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Declaramos el valor inicial como 64 bits (ulong)
+        ulong value = 0x12345678;
+
+        // Establecer el bit en la posición 5
+        value |= 0x20;
+
+        // Borrar el bit en la posición 4
+        value &= ~0x10;
+
+        // Mostrar el resultado
+        Console.WriteLine("Resultado: 0x" + value.ToString("X"));
+    }
+}
+*/
+
 .global _start
 
 .section .data
