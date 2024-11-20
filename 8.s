@@ -1,3 +1,53 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/*
+    using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Cálculo del n-ésimo término de la Serie de Fibonacci");
+
+        // Solicitar al usuario un número
+        Console.Write("Ingresa el valor de n (entero positivo): ");
+        string input = Console.ReadLine();
+
+        // Validar la entrada
+        if (int.TryParse(input, out int n) && n >= 0)
+        {
+            long fibonacci = CalcularFibonacci(n);
+            Console.WriteLine($"El término {n} de la serie de Fibonacci es: {fibonacci}");
+        }
+        else
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingresa un número entero no negativo.");
+        }
+    }
+
+    static long CalcularFibonacci(int n)
+    {
+        if (n == 0) return 0; // Caso base: Fibonacci(0) = 0
+        if (n == 1) return 1; // Caso base: Fibonacci(1) = 1
+
+        long a = 0, b = 1;
+
+        for (int i = 2; i <= n; i++)
+        {
+            long temp = a + b;
+            a = b;
+            b = temp;
+        }
+
+        return b;
+    }
+}
+*/
+
 // Programa en ensamblador ARM de 64 bits para calcular la serie de Fibonacci hasta un número fijo
 // Guardar este archivo como fibonacci.s y compilar con:
 // $ as -o fibonacci.o fibonacci.s
