@@ -1,3 +1,48 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+// Conversión de entero a ASCII
+
+/*
+using System;
+using System.Text;
+
+class Program
+{
+    static void Main()
+    {
+        int number = 1234;  // Número que queremos convertir
+        string outputString = "Resultado: ";  // Cadena fija para mostrar antes del resultado
+
+        // Convertimos el número a cadena usando el método personalizado intToAscii
+        string resultString = intToAscii(number);
+
+        // Mostramos el resultado completo
+        Console.WriteLine(outputString + resultString);
+    }
+
+    // Función: intToAscii
+    // Convierte un número entero en una cadena ASCII
+    static string intToAscii(int number)
+    {
+        StringBuilder buffer = new StringBuilder();
+
+        // Convierte el número a cadena al revés (mismo principio que en ensamblador)
+        while (number > 0)
+        {
+            int remainder = number % 10;                // Obtener el último dígito
+            char asciiChar = (char)('0' + remainder);   // Convertir a ASCII
+            buffer.Insert(0, asciiChar);                // Insertar el carácter en el inicio
+            number /= 10;                               // Reducir el número dividiéndolo entre 10
+        }
+
+        return buffer.ToString();  // Devuelve la cadena construida
+    }
+}
+*/
+
 .section .data
 buffer:         .space 16            // Buffer para almacenar el resultado (cadena ASCII)
 output_string:  .asciz "Resultado: "  // Cadena fija para mostrar antes del resultado
