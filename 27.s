@@ -1,3 +1,34 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+// Desplazamientos a la izquierda y derecha
+
+/*
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Definir el valor inicial
+        ulong value = 0x12345678;
+
+        // Mostrar el valor inicial
+        Console.WriteLine($"Valor inicial: 0x{value:X}");
+
+        // Desplazamiento a la izquierda (Left Shift) - 4 bits
+        ulong leftShiftResult = value << 4;
+        Console.WriteLine($"Desplazamiento a la izquierda (4 bits): 0x{leftShiftResult:X}");
+
+        // Desplazamiento a la derecha (Logical Right Shift) - 8 bits
+        ulong rightShiftResult = value >> 8;
+        Console.WriteLine($"Desplazamiento a la derecha (8 bits): 0x{rightShiftResult:X}");
+    }
+}
+*/
 .global _start
 
 .section .data
