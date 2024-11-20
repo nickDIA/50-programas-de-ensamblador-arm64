@@ -1,3 +1,59 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+// Contar vocales y consonantes
+
+/*
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string inputString = "Este es un ejemplo de una cadena con vocales y consonantes.";
+
+        // Contadores para vocales y consonantes
+        int vowelCount = 0;
+        int consonantCount = 0;
+
+        // Recorrer cada carácter en la cadena de entrada
+        foreach (char c in inputString)
+        {
+            // Verificar si el carácter es una vocal
+            if (IsVowel(c))
+            {
+                vowelCount++;
+            }
+            // Verificar si el carácter es una consonante
+            else if (IsConsonant(c))
+            {
+                consonantCount++;
+            }
+        }
+
+        // Imprimir el resultado
+        Console.WriteLine("Cantidad de vocales: " + vowelCount);
+        Console.WriteLine("Cantidad de consonantes: " + consonantCount);
+    }
+
+    // Función para verificar si un carácter es una vocal
+    static bool IsVowel(char c)
+    {
+        c = char.ToLower(c);
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+
+    // Función para verificar si un carácter es una consonante
+    static bool IsConsonant(char c)
+    {
+        c = char.ToLower(c);
+        return char.IsLetter(c) && !IsVowel(c);
+    }
+}
+*/
 .global _start
 
 .section .data
