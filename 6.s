@@ -10,7 +10,7 @@
 // X1 - Contador actual
 // X2 - Suma acumulada
 
-using System;
+// using System;
 
 // class Program
 // {
