@@ -1,3 +1,38 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+// Operaciones AND, OR, XOR a nivel de bits
+
+/*
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Valores iniciales (en hexadecimal)
+        ulong value1 = 0xF0F0F0F0F0F0F0F0;
+        ulong value2 = 0x0F0F0F0F0F0F0F0F;
+
+        // Operación AND
+        ulong resultAnd = value1 & value2;
+        
+        // Operación OR
+        ulong resultOr = value1 | value2;
+        
+        // Operación XOR
+        ulong resultXor = value1 ^ value2;
+
+        // Imprimir los resultados
+        Console.WriteLine("Resultado de AND: 0x" + resultAnd.ToString("X16"));
+        Console.WriteLine("Resultado de OR:  0x" + resultOr.ToString("X16"));
+        Console.WriteLine("Resultado de XOR: 0x" + resultXor.ToString("X16"));
+    }
+}
+*/
 .global _start
 
 .section .data
