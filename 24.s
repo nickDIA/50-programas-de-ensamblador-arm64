@@ -1,3 +1,45 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+// Calcular la longitud de una cadena
+
+/*
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string inputString = "Cadena a Medir";  // Cadena de entrada
+
+        // Llamar a la función personalizada strlen para calcular la longitud de la cadena
+        int length = Strlen(inputString);
+
+        // Imprimir la longitud de la cadena
+        Console.WriteLine("Longitud de la cadena: " + length);
+    }
+
+    // Función: Strlen
+    // Calcula la longitud de una cadena terminada en nulo (sin contar el '\0')
+    static int Strlen(string str)
+    {
+        int length = 0;
+
+        // Recorre cada carácter de la cadena hasta llegar al final
+        foreach (char c in str)
+        {
+            if (c == '\0')   // Verificar si es el carácter nulo (aunque en C# no suele usarse)
+                break;
+            length++;
+        }
+
+        return length;
+    }
+}
+*/
 .section .data
 input_string:   .asciz "Cadena a Medir"   // Cadena de entrada (terminada en '\0')
 
