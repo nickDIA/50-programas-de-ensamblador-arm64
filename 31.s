@@ -1,3 +1,54 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+/*
+  using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Cálculo de Máximo Común Divisor (MCD) y Mínimo Común Múltiplo (MCM)");
+
+        // Solicitar los dos números
+        Console.Write("Ingresa el primer número entero: ");
+        string input1 = Console.ReadLine();
+
+        Console.Write("Ingresa el segundo número entero: ");
+        string input2 = Console.ReadLine();
+
+        // Validar la entrada
+        if (int.TryParse(input1, out int num1) && int.TryParse(input2, out int num2) && num1 > 0 && num2 > 0)
+        {
+            int mcd = CalcularMCD(num1, num2);
+            int mcm = (num1 * num2) / mcd;
+
+            // Mostrar resultados
+            Console.WriteLine($"El MCD de {num1} y {num2} es: {mcd}");
+            Console.WriteLine($"El MCM de {num1} y {num2} es: {mcm}");
+        }
+        else
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingresa dos números enteros positivos.");
+        }
+    }
+
+    static int CalcularMCD(int a, int b)
+    {
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+}
+
+*/
+
 // Programa para calcular el MCM usando la relación MCM = (a × b) / MCD
 // Registros usados:
 // x0: primer número / resultado MCD
