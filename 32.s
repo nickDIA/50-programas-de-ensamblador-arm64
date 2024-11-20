@@ -1,3 +1,56 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+/*
+  using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Cálculo de Potencia");
+
+        // Solicitar al usuario la base
+        Console.Write("Ingresa la base (un número): ");
+        string inputBase = Console.ReadLine();
+
+        // Solicitar al usuario el exponente
+        Console.Write("Ingresa el exponente (un entero): ");
+        string inputExponente = Console.ReadLine();
+
+        // Validar las entradas
+        if (double.TryParse(inputBase, out double baseNumero) && int.TryParse(inputExponente, out int exponente))
+        {
+            double resultado = CalcularPotencia(baseNumero, exponente);
+
+            Console.WriteLine($"{baseNumero} elevado a la {exponente} es: {resultado}");
+        }
+        else
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingresa un número válido para la base y un entero para el exponente.");
+        }
+    }
+
+    static double CalcularPotencia(double baseNumero, int exponente)
+    {
+        double resultado = 1;
+
+        if (exponente == 0) return 1; // Caso especial: cualquier número elevado a 0 es 1
+        bool esNegativo = exponente < 0;
+        exponente = Math.Abs(exponente); // Trabajar con el valor absoluto del exponente
+
+        for (int i = 0; i < exponente; i++)
+        {
+            resultado *= baseNumero;
+        }
+
+        return esNegativo ? 1 / resultado : resultado; // Si el exponente es negativo, devuelve el recíproco
+    }
+}
+
+*/
 // Programa para calcular la potencia x^n usando exponenciación rápida
 // Registros usados:
 // x0: base (x)
