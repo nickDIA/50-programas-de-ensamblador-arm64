@@ -1,3 +1,144 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/*
+  using System;
+
+class Cola
+{
+    private int[] cola;
+    private int frente;
+    private int fin;
+    private int capacidad;
+    private int tamaño;
+
+    public Cola(int capacidad)
+    {
+        this.capacidad = capacidad;
+        this.cola = new int[capacidad];
+        this.frente = 0;
+        this.fin = -1;
+        this.tamaño = 0;
+    }
+
+    // Verifica si la cola está vacía
+    public bool EstaVacia()
+    {
+        return tamaño == 0;
+    }
+
+    // Verifica si la cola está llena
+    public bool EstaLlena()
+    {
+        return tamaño == capacidad;
+    }
+
+    // Encolar un elemento
+    public void Encolar(int valor)
+    {
+        if (EstaLlena())
+        {
+            Console.WriteLine("La cola está llena. No se puede encolar.");
+        }
+        else
+        {
+            fin = (fin + 1) % capacidad; // Usamos módulo para la rotación circular
+            cola[fin] = valor;
+            tamaño++;
+            Console.WriteLine($"Elemento {valor} encolado.");
+        }
+    }
+
+    // Desencolar un elemento
+    public int Desencolar()
+    {
+        if (EstaVacia())
+        {
+            Console.WriteLine("La cola está vacía. No se puede desencolar.");
+            return -1;
+        }
+        else
+        {
+            int valor = cola[frente];
+            frente = (frente + 1) % capacidad; // Usamos módulo para la rotación circular
+            tamaño--;
+            Console.WriteLine($"Elemento {valor} desencolado.");
+            return valor;
+        }
+    }
+
+    // Ver el primer elemento (frente)
+    public int Frente()
+    {
+        if (EstaVacia())
+        {
+            Console.WriteLine("La cola está vacía.");
+            return -1;
+        }
+        else
+        {
+            return cola[frente];
+        }
+    }
+
+    // Mostrar todos los elementos de la cola
+    public void Mostrar()
+    {
+        if (EstaVacia())
+        {
+            Console.WriteLine("La cola está vacía.");
+        }
+        else
+        {
+            Console.Write("Elementos en la cola: ");
+            for (int i = 0; i < tamaño; i++)
+            {
+                Console.Write(cola[(frente + i) % capacidad] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Crear una cola con capacidad de 5 elementos
+        Cola cola = new Cola(5);
+
+        // Encolar elementos
+        cola.Encolar(10);
+        cola.Encolar(20);
+        cola.Encolar(30);
+
+        // Mostrar la cola
+        cola.Mostrar();
+
+        // Desencolar un elemento
+        cola.Desencolar();
+
+        // Mostrar la cola después de desencolar
+        cola.Mostrar();
+
+        // Ver el primer elemento
+        Console.WriteLine("El primer elemento de la cola es: " + cola.Frente());
+
+        // Encolar más elementos
+        cola.Encolar(40);
+        cola.Encolar(50);
+        cola.Encolar(60); // Esto debería dar un error porque la cola está llena
+
+        // Mostrar la cola
+        cola.Mostrar();
+    }
+}
+
+*/
+
 // Implementación de Cola usando un arreglo en ARM64 Assembly
 .data
     array:      .skip 400        // Espacio para 100 elementos (4 bytes cada uno)
