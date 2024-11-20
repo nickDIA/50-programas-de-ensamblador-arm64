@@ -1,3 +1,62 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/*
+  using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Verificador de números primos");
+
+        // Solicitar al usuario un número
+        Console.Write("Ingresa un número entero positivo: ");
+        string input = Console.ReadLine();
+
+        // Validar la entrada
+        if (int.TryParse(input, out int numero) && numero > 0)
+        {
+            if (EsPrimo(numero))
+            {
+                Console.WriteLine($"El número {numero} es primo.");
+            }
+            else
+            {
+                Console.WriteLine($"El número {numero} no es primo.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingresa un número entero positivo.");
+        }
+    }
+
+    static bool EsPrimo(int n)
+    {
+        if (n <= 1) return false; // Los números menores o iguales a 1 no son primos
+        if (n == 2) return true;  // El número 2 es primo
+        if (n % 2 == 0) return false; // Los números pares mayores que 2 no son primos
+
+        // Verificar divisores desde 3 hasta la raíz cuadrada de n
+        int limite = (int)Math.Sqrt(n);
+        for (int i = 3; i <= limite; i += 2)
+        {
+            if (n % i == 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+*/
+
 // Programa en ensamblador ARM de 64 bits para verificar si un número fijo es primo
 // Guardar este archivo como primo.s y compilar con:
 // $ as -o primo.o primo.s
