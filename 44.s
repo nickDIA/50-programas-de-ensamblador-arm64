@@ -1,3 +1,35 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/*
+    using System;
+
+class GeneradorAleatorio
+{
+    static void Main()
+    {
+        // Solicitar al usuario que ingrese una semilla
+        Console.Write("Ingresa una semilla para el generador de números aleatorios: ");
+        int semilla = Convert.ToInt32(Console.ReadLine());
+
+        // Crear una instancia de Random utilizando la semilla
+        Random random = new Random(semilla);
+
+        // Generar algunos números aleatorios
+        Console.WriteLine("Generando 5 números aleatorios:");
+        for (int i = 0; i < 5; i++)
+        {
+            int numeroAleatorio = random.Next();
+            Console.WriteLine(numeroAleatorio);
+        }
+    }
+}
+
+*/
+
 // Generador de números pseudoaleatorios con semilla
 .global _start
 .section .text
