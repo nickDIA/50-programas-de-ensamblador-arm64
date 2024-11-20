@@ -4,6 +4,48 @@
 // Autor: Ibarra Acedo Dominick 
 // Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
 
+// using System;
+// using System.Text;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         const string cadenaOriginal = "Hola mundo! Esta es una prueba de inversión.";
+        
+//         // Método 1: Usando Array.Reverse
+//         char[] caracteres = cadenaOriginal.ToCharArray();
+//         Array.Reverse(caracteres);
+//         string resultado1 = new string(caracteres);
+//         Console.WriteLine($"Método 1 (Array.Reverse): {resultado1}");
+
+//         // Método 2: Usando StringBuilder
+//         StringBuilder sb = new StringBuilder(cadenaOriginal.Length);
+//         for (int i = cadenaOriginal.Length - 1; i >= 0; i--)
+//         {
+//             sb.Append(cadenaOriginal[i]);
+//         }
+//         string resultado2 = sb.ToString();
+//         Console.WriteLine($"Método 2 (StringBuilder): {resultado2}");
+
+//         // Método 3: LINQ (menos eficiente pero más conciso)
+//         string resultado3 = new string(cadenaOriginal.Reverse().ToArray());
+//         Console.WriteLine($"Método 3 (LINQ): {resultado3}");
+        
+//         // Método 4: Recursivo (para cadenas pequeñas)
+//         static string InvertirRecursivo(string str)
+//         {
+//             if (string.IsNullOrEmpty(str) || str.Length <= 1)
+//                 return str;
+                
+//             return str[^1] + InvertirRecursivo(str[..^1]);
+//         }
+        
+//         string resultado4 = InvertirRecursivo(cadenaOriginal);
+//         Console.WriteLine($"Método 4 (Recursivo): {resultado4}");
+//     }
+// }
+
 // Programa en ensamblador ARM de 64 bits para invertir una cadena fija
 // Guardar este archivo como invertir.s y compilar con:
 // $ as -o invertir.o invertir.s
