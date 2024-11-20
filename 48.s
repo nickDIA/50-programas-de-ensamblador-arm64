@@ -1,3 +1,39 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/* 
+using System;
+using System.Diagnostics;
+
+class MedidorTiempo
+{
+    static void Main()
+    {
+        // Crear una instancia de Stopwatch
+        Stopwatch stopwatch = new Stopwatch();
+
+        // Iniciar el cronómetro
+        stopwatch.Start();
+
+        // El bloque de código cuyo tiempo de ejecución queremos medir
+        Console.WriteLine("Ejecutando tarea...");
+        
+        // Simulación de tarea que tarda 2 segundos
+        System.Threading.Thread.Sleep(2000);  // Simula una tarea que toma 2 segundos
+
+        // Detener el cronómetro
+        stopwatch.Stop();
+
+        // Mostrar el tiempo transcurrido
+        Console.WriteLine($"El tiempo de ejecución fue: {stopwatch.ElapsedMilliseconds} milisegundos");
+    }
+}
+
+*/
+
 // Medidor de tiempo de ejecución
 .global _start
 .section .text
