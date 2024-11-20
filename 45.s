@@ -1,3 +1,47 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/*
+    using System;
+
+class VerificadorArmstrong
+{
+    static void Main()
+    {
+        // Solicitar al usuario que ingrese un número
+        Console.Write("Ingresa un número para verificar si es un número de Armstrong: ");
+        int numero = Convert.ToInt32(Console.ReadLine());
+
+        // Convertir el número a cadena para contar el número de dígitos
+        int numeroOriginal = numero;
+        int cantidadDeDigitos = numero.ToString().Length;
+        int suma = 0;
+
+        // Sumar los dígitos elevados a la potencia de la cantidad de dígitos
+        while (numero > 0)
+        {
+            int digito = numero % 10; // Obtener el último dígito
+            suma += (int)Math.Pow(digito, cantidadDeDigitos); // Elevarlo a la potencia de la cantidad de dígitos y sumarlo
+            numero /= 10; // Eliminar el último dígito
+        }
+
+        // Verificar si el número original es igual a la suma
+        if (suma == numeroOriginal)
+        {
+            Console.WriteLine($"{numeroOriginal} es un número de Armstrong.");
+        }
+        else
+        {
+            Console.WriteLine($"{numeroOriginal} no es un número de Armstrong.");
+        }
+    }
+}
+
+*/
+
 // Verificador de números Armstrong
 .global _start
 .section .text
