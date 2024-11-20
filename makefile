@@ -1,5 +1,5 @@
 all: run_all
-run_all: run1	run2	run3	run4	run5	run6	run7	run8	run9	run10	run11	run12	run13	run14	run15	run16	run17	run18	run19	run20	run21	run22	run23	run24	run25	run26	run27	run28	run29	run30	run31	run32	run33	run34	run35	run36	run37	run38	run39	run40	run41	run42	run43	run44	run45	run46	run47	run48	run49	run50 
+run_all: run1	run2	run3	run4	run5	run6	run7	run8	run9	run10	run11	run12	run13	run14	run15	run16	run17	run18	run19	run20	run21	run22	run23	run24	run25	run26	run27	run28	run29	run30	run31	run32	run33	run34	run35	run36	run37	run38	run39	run40	run41	run42	run43	run44	run45	run46	run47	run48	run49	run50 clean 
 run1: 1.s
 	as -o 1.o 1.s
 	ld -o 1 1.o
@@ -150,3 +150,10 @@ run49:49.s
 run50:50.s
 	as -o 50.o 50.s
 	ld -o 50 50.o
+clean:
+	rm 1.o 1.s 2.o 2.s 3.o 3.s 4.o 4.s 5.o 5.s 6.o 6.s 7.o 7.s 8.o 8.s 9.o 9.s 10.o 10.s \
+	11.o 11.s 12.o 12.s 13.o 13.s 14.o 14.s 15.o 15.s 16.o 16.s 17.o 17.s 18.o 18.s \
+	19.o 19.s 20.o 20.s 21.o 21.s 22.o 22.s 23.o 23.s 24.o 24.s 25.o 25.s 26.o 26.s \
+	27.o 27.s 28.o 28.s 29.o 29.s 30.o 30.s 31.o 31.s 32.o 32.s 33.o 33.s 34.o 34.s \
+	35.o 35.s 36.o 36.s 37.o 37.s 38.o 38.s 39.o 39.s 40.o 40.s 41.o 41.s 42.o 42.s \
+	43.o 43.s 44.o 44.s 45.o 45.s 46.o 46.s 47.o 47.s 48.o 48.s 49.o 49.s 50.o 50.s
