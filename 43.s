@@ -1,3 +1,72 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/*
+    using System;
+
+class Calculadora
+{
+    static void Main()
+    {
+        double num1, num2, resultado;
+        string operacion;
+
+        Console.WriteLine("Calculadora simple");
+        
+        // Ingresar el primer número
+        Console.Write("Ingresa el primer número: ");
+        num1 = Convert.ToDouble(Console.ReadLine());
+
+        // Ingresar la operación
+        Console.Write("Ingresa la operación (+, -, *, /): ");
+        operacion = Console.ReadLine();
+
+        // Ingresar el segundo número
+        Console.Write("Ingresa el segundo número: ");
+        num2 = Convert.ToDouble(Console.ReadLine());
+
+        // Realizar la operación según la elección del usuario
+        switch (operacion)
+        {
+            case "+":
+                resultado = num1 + num2;
+                Console.WriteLine($"Resultado: {num1} + {num2} = {resultado}");
+                break;
+
+            case "-":
+                resultado = num1 - num2;
+                Console.WriteLine($"Resultado: {num1} - {num2} = {resultado}");
+                break;
+
+            case "*":
+                resultado = num1 * num2;
+                Console.WriteLine($"Resultado: {num1} * {num2} = {resultado}");
+                break;
+
+            case "/":
+                if (num2 != 0)
+                {
+                    resultado = num1 / num2;
+                    Console.WriteLine($"Resultado: {num1} / {num2} = {resultado}");
+                }
+                else
+                {
+                    Console.WriteLine("Error: No se puede dividir entre cero.");
+                }
+                break;
+
+            default:
+                Console.WriteLine("Operación no válida.");
+                break;
+        }
+    }
+}
+
+*/
+
 // Calculadora simple (suma, resta, multiplicación, división)
 .global _start
 .section .text
