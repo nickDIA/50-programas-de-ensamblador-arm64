@@ -1,3 +1,83 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/*
+  using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Encontrar el segundo elemento más grande en un arreglo");
+
+        // Solicitar al usuario el tamaño del arreglo
+        Console.Write("Ingresa el número de elementos del arreglo: ");
+        string inputTamaño = Console.ReadLine();
+
+        if (int.TryParse(inputTamaño, out int tamaño) && tamaño > 1)
+        {
+            int[] arreglo = new int[tamaño];
+
+            // Llenar el arreglo
+            for (int i = 0; i < tamaño; i++)
+            {
+                Console.Write($"Ingresa el elemento {i + 1}: ");
+                if (int.TryParse(Console.ReadLine(), out int elemento))
+                {
+                    arreglo[i] = elemento;
+                }
+                else
+                {
+                    Console.WriteLine("Entrada no válida. Se establecerá el valor 0.");
+                    arreglo[i] = 0;
+                }
+            }
+
+            // Llamar a la función para encontrar el segundo elemento más grande
+            int segundoMasGrande = EncontrarSegundoMasGrande(arreglo);
+
+            if (segundoMasGrande != int.MinValue)
+            {
+                Console.WriteLine($"El segundo elemento más grande en el arreglo es: {segundoMasGrande}");
+            }
+            else
+            {
+                Console.WriteLine("No se puede determinar el segundo elemento más grande, el arreglo tiene menos de 2 elementos diferentes.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Entrada no válida. El arreglo debe tener al menos 2 elementos.");
+        }
+    }
+
+    static int EncontrarSegundoMasGrande(int[] arreglo)
+    {
+        int maximo = int.MinValue; // El mayor número encontrado
+        int segundoMaximo = int.MinValue; // El segundo mayor número encontrado
+
+        foreach (int numero in arreglo)
+        {
+            if (numero > maximo)
+            {
+                segundoMaximo = maximo;  // El segundo máximo pasa a ser el máximo anterior
+                maximo = numero;         // Actualizar el máximo
+            }
+            else if (numero > segundoMaximo && numero != maximo)
+            {
+                segundoMaximo = numero;  // Actualizar el segundo máximo
+            }
+        }
+
+        return segundoMaximo;
+    }
+}
+
+*/
+
 // Programa para encontrar el segundo elemento más grande en un arreglo
 // Registros usados:
 // x0: dirección base del arreglo
