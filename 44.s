@@ -30,23 +30,22 @@ class GeneradorAleatorio
 
 */
 
-.global _start
+.globl main
 .align 2
 
 // Constantes para el algoritmo LCG
-// Usando los parámetros de "Numerical Recipes"
-.equ MULTIPLIER, 1664525
-.equ INCREMENT, 1013904223
-.equ MODULUS, 0xFFFFFFFF    // 2^32 - 1
-
 .data
-seed:   .word 12345         // Semilla inicial
-msg:    .ascii "Número generado: "
+multiplier:  .word 1664525
+increment:   .word 1013904223
+seed:        .word 12345         // Semilla inicial
+msg:         .ascii "Numero generado: "
 msglen = . - msg
-newline:.ascii "\n"
+newline:     .ascii "\n"
+buffer:      .skip 12           // Buffer para conversión de números
 
 .text
-_start:
+.align 2
+main:
     // Preservar registros
     stp x29, x30, [sp, #-16]!
     mov x29, sp
@@ -55,19 +54,16 @@ _start:
     adr x0, seed
     ldr w1, [x0]           // w1 = semilla actual
 
+    // Cargar constantes
+    adr x0, multiplier
+    ldr w2, [x0]           // w2 = multiplier
+    adr x0, increment
+    ldr w3, [x0]           // w3 = increment
+
 generate_number:
-    // Implementar la fórmula LCG:
-    // next = (multiplier * seed + increment) % modulus
-    
-    // Multiplicación
-    mov w2, #MULTIPLIER
-    mul w1, w1, w2
-    
-    // Suma del incremento
-    mov w2, #INCREMENT
-    add w1, w1, w2
-    
-    // El módulo es implícito por el uso de registros de 32 bits
+    // Implementar LCG: next = (multiplier * seed + increment) % 2^32
+    mul w1, w1, w2         // w1 = seed * multiplier
+    add w1, w1, w3         // w1 = w1 + increment
     
     // Guardar el nuevo valor como siguiente semilla
     adr x0, seed
@@ -76,11 +72,11 @@ generate_number:
     // Imprimir mensaje
     mov x0, #1              // fd = 1 (stdout)
     adr x1, msg            // buffer = dirección del mensaje
-    mov x2, #msglen        // length = longitud del mensaje
+    mov x2, msglen         // length = longitud del mensaje
     mov x8, #64            // syscall write
     svc #0
     
-    // Convertir número a string y mostrar
+    // Convertir número a string
     mov w0, w1             // Número a convertir
     bl number_to_string
     
@@ -93,8 +89,8 @@ generate_number:
     
     // Salir del programa
     mov x0, #0
-    mov x8, #93            // syscall exit
-    svc #0
+    ldp x29, x30, [sp], #16
+    ret
 
 // Subrutina para convertir número a string y mostrarlo
 number_to_string:
@@ -102,30 +98,47 @@ number_to_string:
     stp x29, x30, [sp, #-16]!
     mov x29, sp
     
-    // Reservar espacio para el string (12 caracteres son suficientes para 32 bits)
-    sub sp, sp, #16
-    mov x3, sp             // x3 = puntero al buffer
-    
-    // Convertir número a ASCII
-    mov x2, #10            // Base 10
-    mov w4, w0             // Copiar número
+    // Preparar buffer
+    adr x3, buffer         // x3 = puntero al buffer
+    mov x4, x3             // Guardar inicio del buffer
+    mov w5, w0             // Copiar número a convertir
     
 convert_loop:
-    udiv w5, w4, w2        // w5 = w4 / 10
-    msub w6, w5, w2, w4    // w6 = w4 - (w5 * 10) = residuo
-    add w6, w6, #'0'       // Convertir a ASCII
-    strb w6, [x3], #1      // Almacenar y avanzar puntero
-    mov w4, w5             // Preparar para siguiente iteración
-    cbnz w4, convert_loop  // Continuar si no es cero
+    // Dividir por 10
+    mov w6, #10
+    udiv w7, w5, w6        // w7 = w5 / 10
+    msub w8, w7, w6, w5    // w8 = remainder
     
-    // Imprimir el número
-    mov x0, #1             // fd = 1 (stdout)
-    mov x1, sp             // buffer = inicio del número
-    sub x2, x3, sp        // length = longitud del número
+    // Convertir dígito a ASCII y guardarlo
+    add w8, w8, #48        // Convertir a ASCII
+    strb w8, [x3], #1      // Guardar y avanzar puntero
+    
+    // Preparar siguiente iteración
+    mov w5, w7             // Actualizar número
+    cbnz w5, convert_loop  // Continuar si no es cero
+    
+    // Revertir los dígitos en el buffer
+    sub x3, x3, #1         // Apuntar al último dígito
+reverse_loop:
+    cmp x4, x3
+    bge print_number
+    ldrb w5, [x4]
+    ldrb w6, [x3]
+    strb w6, [x4]
+    strb w5, [x3]
+    add x4, x4, #1
+    sub x3, x3, #1
+    b reverse_loop
+    
+print_number:
+    // Calcular longitud e imprimir
+    adr x1, buffer         // Dirección del buffer
+    sub x2, x3, x1         // Longitud = final - inicio
+    add x2, x2, #1         // Ajustar longitud
+    mov x0, #1             // fd = stdout
     mov x8, #64            // syscall write
     svc #0
     
-    // Restaurar stack y registros
-    add sp, sp, #16
+    // Restaurar y retornar
     ldp x29, x30, [sp], #16
     ret
