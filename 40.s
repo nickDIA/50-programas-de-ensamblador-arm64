@@ -1,3 +1,69 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/*
+  using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Conversión de binario a decimal");
+
+        // Solicitar al usuario un número binario
+        Console.Write("Ingresa un número binario: ");
+        string inputBinario = Console.ReadLine();
+
+        // Validar si el número binario es válido
+        if (EsBinarioValido(inputBinario))
+        {
+            int numeroDecimal = ConvertirBinarioADecimal(inputBinario);
+            Console.WriteLine($"El número binario {inputBinario} en decimal es: {numeroDecimal}");
+        }
+        else
+        {
+            Console.WriteLine("El número ingresado no es un binario válido.");
+        }
+    }
+
+    // Verificar si el número ingresado es un número binario válido
+    static bool EsBinarioValido(string binario)
+    {
+        foreach (char c in binario)
+        {
+            if (c != '0' && c != '1')
+            {
+                return false; // Si contiene un carácter distinto a '0' o '1', no es binario
+            }
+        }
+        return true;
+    }
+
+    // Convertir el número binario a decimal
+    static int ConvertirBinarioADecimal(string binario)
+    {
+        int numeroDecimal = 0;
+        int potencia = 0;
+
+        // Recorremos el número binario de derecha a izquierda
+        for (int i = binario.Length - 1; i >= 0; i--)
+        {
+            if (binario[i] == '1')
+            {
+                numeroDecimal += (int)Math.Pow(2, potencia); // Sumar el valor correspondiente en base 2
+            }
+            potencia++;
+        }
+
+        return numeroDecimal;
+    }
+}
+
+*/
+
 // Programa para convertir número binario a decimal
 .global _start
 .section .text
