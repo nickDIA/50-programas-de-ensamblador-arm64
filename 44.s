@@ -30,33 +30,102 @@ class GeneradorAleatorio
 
 */
 
-// Generador de números pseudoaleatorios con semilla
 .global _start
-.section .text
+.align 2
 
+// Constantes para el algoritmo LCG
+// Usando los parámetros de "Numerical Recipes"
+.equ MULTIPLIER, 1664525
+.equ INCREMENT, 1013904223
+.equ MODULUS, 0xFFFFFFFF    // 2^32 - 1
+
+.data
+seed:   .word 12345         // Semilla inicial
+msg:    .ascii "Número generado: "
+msglen = . - msg
+newline:.ascii "\n"
+
+.text
 _start:
-    // Inicializar generador
-    mov x19, #12345      // Semilla inicial
-    mov x20, #1103515245 // Multiplicador (constante)
-    mov x21, #12345      // Incremento (constante)
-    mov x22, #10         // Cantidad de números a generar
-    
-generate_loop:
-    // Fórmula: siguiente = (semilla * multiplicador + incremento) & máscara
-    mul x19, x19, x20            // x19 = semilla * multiplicador
-    add x19, x19, x21            // x19 += incremento
-    and x19, x19, #0x7fffffff    // Mantener 31 bits (máscara)
-    
-    // El número aleatorio está en x19
-    
-    // Preparar siguiente iteración
-    sub x22, x22, #1             // Decrementar contador
-    cbnz x22, generate_loop      // Continuar si no hemos terminado
+    // Preservar registros
+    stp x29, x30, [sp, #-16]!
+    mov x29, sp
 
-exit:
+    // Cargar la semilla inicial
+    adr x0, seed
+    ldr w1, [x0]           // w1 = semilla actual
+
+generate_number:
+    // Implementar la fórmula LCG:
+    // next = (multiplier * seed + increment) % modulus
+    
+    // Multiplicación
+    mov w2, #MULTIPLIER
+    mul w1, w1, w2
+    
+    // Suma del incremento
+    mov w2, #INCREMENT
+    add w1, w1, w2
+    
+    // El módulo es implícito por el uso de registros de 32 bits
+    
+    // Guardar el nuevo valor como siguiente semilla
+    adr x0, seed
+    str w1, [x0]
+    
+    // Imprimir mensaje
+    mov x0, #1              // fd = 1 (stdout)
+    adr x1, msg            // buffer = dirección del mensaje
+    mov x2, #msglen        // length = longitud del mensaje
+    mov x8, #64            // syscall write
+    svc #0
+    
+    // Convertir número a string y mostrar
+    mov w0, w1             // Número a convertir
+    bl number_to_string
+    
+    // Imprimir nueva línea
+    mov x0, #1
+    adr x1, newline
+    mov x2, #1
+    mov x8, #64
+    svc #0
+    
+    // Salir del programa
     mov x0, #0
-    mov x8, #93
+    mov x8, #93            // syscall exit
     svc #0
 
-.section .data
-    // No se necesitan datos
+// Subrutina para convertir número a string y mostrarlo
+number_to_string:
+    // Preservar registros
+    stp x29, x30, [sp, #-16]!
+    mov x29, sp
+    
+    // Reservar espacio para el string (12 caracteres son suficientes para 32 bits)
+    sub sp, sp, #16
+    mov x3, sp             // x3 = puntero al buffer
+    
+    // Convertir número a ASCII
+    mov x2, #10            // Base 10
+    mov w4, w0             // Copiar número
+    
+convert_loop:
+    udiv w5, w4, w2        // w5 = w4 / 10
+    msub w6, w5, w2, w4    // w6 = w4 - (w5 * 10) = residuo
+    add w6, w6, #'0'       // Convertir a ASCII
+    strb w6, [x3], #1      // Almacenar y avanzar puntero
+    mov w4, w5             // Preparar para siguiente iteración
+    cbnz w4, convert_loop  // Continuar si no es cero
+    
+    // Imprimir el número
+    mov x0, #1             // fd = 1 (stdout)
+    mov x1, sp             // buffer = inicio del número
+    sub x2, x3, sp        // length = longitud del número
+    mov x8, #64            // syscall write
+    svc #0
+    
+    // Restaurar stack y registros
+    add sp, sp, #16
+    ldp x29, x30, [sp], #16
+    ret
