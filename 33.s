@@ -1,3 +1,69 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/*
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Cálculo de la suma de elementos en un arreglo");
+
+        // Solicitar el tamaño del arreglo
+        Console.Write("Ingresa el número de elementos del arreglo: ");
+        string inputTamaño = Console.ReadLine();
+
+        if (int.TryParse(inputTamaño, out int tamaño) && tamaño > 0)
+        {
+            int[] arreglo = new int[tamaño];
+
+            // Llenar el arreglo
+            for (int i = 0; i < tamaño; i++)
+            {
+                Console.Write($"Ingresa el elemento {i + 1}: ");
+                if (int.TryParse(Console.ReadLine(), out int elemento))
+                {
+                    arreglo[i] = elemento;
+                }
+                else
+                {
+                    Console.WriteLine("Entrada no válida. Se establecerá el valor 0.");
+                    arreglo[i] = 0;
+                }
+            }
+
+            // Calcular la suma
+            int suma = CalcularSuma(arreglo);
+
+            // Mostrar el resultado
+            Console.WriteLine($"La suma de los elementos del arreglo es: {suma}");
+        }
+        else
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingresa un número entero positivo.");
+        }
+    }
+
+    static int CalcularSuma(int[] arreglo)
+    {
+        int suma = 0;
+
+        foreach (int elemento in arreglo)
+        {
+            suma += elemento;
+        }
+
+        return suma;
+    }
+}
+
+*/
+
+
 // Programa para sumar elementos de un arreglo
 // Registros usados:
 // x0: dirección base del arreglo
