@@ -1,3 +1,40 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+/* 
+
+using System;
+using System.IO;
+
+class EscribirEnArchivo
+{
+    static void Main()
+    {
+        // Definir el nombre del archivo
+        string nombreArchivo = "ejemplo.txt";
+
+        // Crear o abrir el archivo para escribir
+        using (StreamWriter escritor = new StreamWriter(nombreArchivo))
+        {
+            // Escribir en el archivo
+            escritor.WriteLine("Hola, esto es un ejemplo de escritura en un archivo.");
+            escritor.WriteLine("Esta es otra línea.");
+
+            // También puedes escribir texto sin salto de línea
+            escritor.Write("Este texto no tiene salto de línea.");
+        }
+
+        // Confirmar que se escribió correctamente
+        Console.WriteLine("El texto ha sido escrito en el archivo.");
+    }
+}
+
+
+*/
+
 // Escritor de archivo
 .global _start
 .section .text
