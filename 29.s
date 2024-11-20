@@ -1,3 +1,49 @@
+// Instituto Tecnologico de Tijuana
+// Depto de Sistemas y Computacion
+// Ing. Sistemas computacionales
+// Autor: Ibarra Acedo Dominick 
+// Repositorio: https://github.com/nickDIA/50-programas-de-ensamblador-arm64
+
+// Contar los bits activados en un número
+// (Una eternidad en debugear)
+
+/*
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Definir el número de ejemplo
+        ulong number = 0x12345678;  // Número: 0x12345678 (en binario: 00010010001101000101011001111000)
+
+        // Llamar a la función para contar los bits activados
+        int bitCount = CountSetBits(number);
+
+        // Mostrar el número y el conteo de bits activados
+        Console.WriteLine($"Número: 0x{number:X}");
+        Console.WriteLine($"Número de bits activados: {bitCount}");
+    }
+
+    // Función para contar los bits activados (Hamming weight)
+    static int CountSetBits(ulong number)
+    {
+        int count = 0;
+        
+        while (number != 0)
+        {
+            // Comprobar si el bit más bajo está activado
+            count += (int)(number & 1); // Si el bit está activado, incrementar el contador
+
+            // Desplazar a la derecha para procesar el siguiente bit
+            number >>= 1;
+        }
+
+        return count;
+    }
+}
+*/
+
 // Una eternidad en debugear
 .global _start
 
